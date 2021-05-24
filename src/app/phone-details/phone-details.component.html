@@ -1,0 +1,27 @@
+<div class="jumbotron py-3">
+<h1 class="display-4 text-center">Phone Details</h1>
+</div>
+<div class="row">
+<div class="col-md-6">
+<app-phone-detail-form></app-phone-detail-form>
+</div>
+<div class="col-md-6">
+<table class="table">
+<thead class="thead-light">
+<tr>
+  <th>Name</th>
+  <th>Phone Number</th>
+</tr>
+</thead>
+<tbody>
+  <tr>
+    <input type="text" class="form-control"  placeholder="Enter Name for search result" [(ngModel)]="searchedKeyword">
+  </tr>
+  <tr *ngFor="let pc of service.list | filter:searchedKeyword">
+<td>{{pc.name}}</td>
+<td>{{pc.contactNumber}}</td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
